@@ -1,0 +1,5 @@
+println hello world
+println test is $test
+setvar test 7
+println setting test to 7.
+println test is $test now.
