@@ -8,4 +8,4 @@ python3 tmp.py
 
 To install, use a python compiler.
 
-No batchfile support yet (.tmpc is the extension) but we're working on it!
+Use .tmpc as the batchfile extension. exec.py is the executable. run the program and type in the filename.
