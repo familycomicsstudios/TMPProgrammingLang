@@ -1,0 +1,7 @@
+println you are exploring a cave. left or right? [l/r]
+input choice
+eval $choice = l left
+setvar gold You found gold!
+setvar dragon Uh oh! A dragon!
+ifset $left gold dragon decision
+println $decision

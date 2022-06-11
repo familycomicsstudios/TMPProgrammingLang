@@ -3,3 +3,6 @@ println test is $test
 setvar test 7
 println setting test to 7.
 println test is $test now.
+println what do you want test to be?
+input test
+println test is now $test .

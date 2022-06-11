@@ -1,7 +1,7 @@
 """
 TMP Programming Language
-v0.2.0
-Build 06112022
+v0.3.0
+Build 06102022
 """
 
 #import re
@@ -22,6 +22,9 @@ def preprocess(args):
                 args[int(arg)] = variables[args[int(arg)][1:]]
             except:
                 print("Error: variable nonexistent")
+        if args[int(arg)][0] == "`":
+            args[int(arg)] = args[int(arg)][1:]
+            
     return args
 
 #Interpret code from text input
@@ -36,7 +39,22 @@ def interpetCode(plainInput):
     if (finalArgs[0] == "print"):
         print(fullStringLiteral[6:], end='')
     if (finalArgs[0] == "setvar"):
-        variables[str(finalArgs[1])] = finalArgs[2]
+        variables[str(finalArgs[1])] = fullStringLiteral[8+len(finalArgs[1]):]
+    if (finalArgs[0] == "input"):
+        variables[str(finalArgs[1])] = input()
+    if (finalArgs[0] == "ifset"):
+        if finalArgs[1] == "True":
+            variables[str(finalArgs[4])] = variables[str(finalArgs[2])]
+        else:
+            variables[str(finalArgs[4])] = variables[str(finalArgs[3])]
+    if (finalArgs[0] == "eval"):
+        if finalArgs[2] == "=":
+            if finalArgs[1] == finalArgs[3]:
+                variables[str(finalArgs[4])] = "True"
+            else:
+                variables[str(finalArgs[4])] = "False"
+                
+            
 
 
 #Main loop for programming here
