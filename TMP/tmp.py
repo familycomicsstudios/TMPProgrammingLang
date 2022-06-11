@@ -1,7 +1,7 @@
 """
 TMP Programming Language
-v0.1.0
-Build 06102022
+v0.2.0
+Build 06112022
 """
 
 #import re
