@@ -1,7 +1,24 @@
-println you are exploring a cave. left or right? [l/r]
+println You are exploring a cave. left or right? [l/r]
 input choice
-eval $choice = l left
+eval $choice = l wentLeft
 setvar gold You found gold!
 setvar dragon Uh oh! A dragon!
-ifset $left gold dragon decision
+ifset $wentLeft gold dragon decision
+println $decision
+println Ready for another decision?
+println You come across a fork in the road.. left or right? [l/r]
+input choice
+eval $choice = l wentLeft
+setvar left You come to a city.
+setvar right You come to a cool fountain.
+ifset $wentLeft left right decision
+println $decision
+if $wentLeft 8
+println You are in the city.
+println Left side or right? [l/r]
+input choice
+eval $choice = l wentLeft
+setvar gold You found a cool shop!
+setvar dragon You found the palace!
+ifset $wentLeft gold dragon decision
 println $decision
