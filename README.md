@@ -4,7 +4,7 @@ Programming language made in Python for simplicity and similarity to shell scrip
 
 file extension for batchfiles: .tmpc
 
-current version: v0.5.0-alpha
+current version: v0.6.0-alpha
 
 No stable versions yet, but some usable versions.
 
