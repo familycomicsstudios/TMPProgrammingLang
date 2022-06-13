@@ -1,7 +1,7 @@
 """
 TMP Programming Language
-v0.5.0-alpha
-Build 06122022
+v0.6.0-alpha
+Build 06132022
 """
 
 #import re and other modules for some internal functions
