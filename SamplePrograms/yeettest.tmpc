@@ -1,0 +1,6 @@
+println Hello World! This is a test program.
+print Type in a number, please: 
+input derp
+print The number you typed in was $derp
+println .
+goto 1

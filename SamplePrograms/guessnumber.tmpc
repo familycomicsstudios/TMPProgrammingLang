@@ -1,0 +1,9 @@
+println Guess the number I'm thinking of between 1 and 10.
+input guess
+eval $guess = 2 correct
+if $correct 2
+println Correct!
+exit
+println Sorry, wrong.
+println Guess again:
+goto 1
