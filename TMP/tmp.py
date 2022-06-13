@@ -7,6 +7,7 @@ Build 06122022
 #import re and other modules for some internal functions
 import re
 import random
+import sys
 
 #Newline handling
 def handleControl(args):
@@ -37,12 +38,13 @@ def preprocess(args):
 #Interpret code from text input
 def interpetCode(plainInput):
     global variables
-    global skipNextLine, version
+    global skipNextLine, version, line_no, fullVersion
     if skipNextLine < 1:
         stringLiteral = handleControl(plainInput)
         args = plainInput.split()
         finalArgs = preprocess(args)
         fullStringLiteral = " ".join(args)
+        
         if len(finalArgs) > 0:
             if (finalArgs[0] == "println"):
                 print(fullStringLiteral[8:])
@@ -117,8 +119,16 @@ def interpetCode(plainInput):
                 return version
             if (finalArgs[0] == "info"):
                 return fullVersion
-        else:
-            skipNextLine -= 1
+            if (finalArgs[0] == "goto" and __name__ != "__main__"):
+                try:
+                    line_no = int(finalArgs[1])
+                    return "letestoftestiness"
+                except:
+                    print("Error converting to integer")
+            if finalArgs[0] == "exit":
+                sys.exit()
+    else:
+        skipNextLine -= 1
                 
             
 
@@ -130,6 +140,7 @@ variables = {"test": "1"}
 skipNextLine = 0
 version = "v0.5.0"
 fullVersion = "v0.5.0-alpha build 06122022"
+line_no = 1
 
 if __name__ == "__main__":
     while True:
