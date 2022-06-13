@@ -1,6 +1,6 @@
 """
 TMP Programming Language
-v0.6.0-alpha
+v0.6.1-alpha
 Build 06132022
 """
 
@@ -138,8 +138,8 @@ def interpetCode(plainInput):
 #Define variables in dictionary
 variables = {"test": "1"}
 skipNextLine = 0
-version = "v0.5.0"
-fullVersion = "v0.5.0-alpha build 06122022"
+version = "v0.6.1"
+fullVersion = "v0.6.1-alpha build 06132022"
 line_no = 1
 
 if __name__ == "__main__":
